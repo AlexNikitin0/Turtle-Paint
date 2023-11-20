@@ -3,28 +3,28 @@ package com.pluralsight;
 import java.awt.*;
 
 public class Square extends Shape{
+        int sideLength;
 
-
-    public Square(Turtle turtle, Point location, Color color, int border) {
+    public Square(Turtle turtle, Point location, Color color, int border,int sideLength) {
         super(turtle, location, color, border);
-
+        this.sideLength = sideLength;
     }
 
 
     @Override
     void paint() {
         //draw a square
-        turtle.setPenWidth(3);
-        turtle.setColor(Color.RED);
+        turtle.setPenWidth(border);
+        turtle.setColor(color);
         turtle.penUp();
-        turtle.cornerGoTo(150,150);
+        turtle.cornerGoTo(location.x,location.y);
         turtle.penDown();
-        turtle.forward(200);
+        turtle.forward(sideLength);
         turtle.turnRight(90);
-        turtle.forward(200);
+        turtle.forward(sideLength);
         turtle.turnRight(90);
-        turtle.forward(200);
+        turtle.forward(sideLength);
         turtle.turnRight(90);
-        turtle.forward(200);
+        turtle.forward(sideLength);
     }
 }

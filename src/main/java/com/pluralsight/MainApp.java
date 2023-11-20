@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MainApp {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        int width, height, choice, thickness, x, y;
+        int width, height, choice, thickness, x, y,sideLength;
         double radius;
         String tempColor;
         System.out.println("Welcome to Turtle Paint!");
@@ -41,12 +41,13 @@ public class MainApp {
 
         switch (choice) {
             case 1:
-
-                Square square = new Square(turtle, location,getColor(tempColor),thickness);
+                System.out.print("What is the length of each side: ");
+                sideLength = keyboard.nextInt();
+                Square square = new Square(turtle, location,getColor(tempColor),thickness,sideLength);
                 square.paint();
                 break;
             case 2:
-                System.out.println("What is the radius? ");
+                System.out.print("What is the radius? ");
                 radius = keyboard.nextDouble();
                 keyboard.nextLine();
                 Circle circle = new Circle(turtle,location,getColor(tempColor),thickness,radius);
