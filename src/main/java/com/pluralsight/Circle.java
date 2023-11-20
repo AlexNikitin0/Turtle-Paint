@@ -4,9 +4,12 @@ import java.awt.*;
 
 public class Circle extends Shape{
 
+    double radius;
 
-    public Circle(Turtle turtle, Point location, Color color, int border) {
+
+    public Circle(Turtle turtle, Point location, Color color, int border,double radius) {
         super(turtle, location, color, border);
+        this.radius = radius;
     }
 
     @Override
@@ -21,9 +24,9 @@ public class Circle extends Shape{
         turtle.turnLeft(90);
         turtle.penDown();
 
-        for(int i = 0;i<45;i++){
-            turtle.forward(8);
-            turtle.turnLeft(8);
+        for(int i=0; i<360; i++){
+            turtle.turnLeft(1);
+            turtle.forward(2 * Math.PI * radius / 360);
         }
     }
 }

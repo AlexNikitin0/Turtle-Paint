@@ -7,6 +7,7 @@ public class MainApp {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int width, height, choice, thickness, x, y;
+        double radius;
         String tempColor;
         System.out.println("Welcome to Turtle Paint!");
         System.out.println("Please define the Canvas Dimensions");
@@ -31,8 +32,8 @@ public class MainApp {
         System.out.print("Y: ");
         y = keyboard.nextInt();
         Point location = new Point(x, y);
-        System.out.println("Your selected shape should appear in the new java window!");
-        //decision structure based on color
+
+
 
 
         //decision structure based on shape
@@ -45,7 +46,10 @@ public class MainApp {
                 square.paint();
                 break;
             case 2:
-                Circle circle = new Circle(turtle,location,getColor(tempColor),thickness);
+                System.out.println("What is the radius? ");
+                radius = keyboard.nextDouble();
+                keyboard.nextLine();
+                Circle circle = new Circle(turtle,location,getColor(tempColor),thickness,radius);
                 circle.paint();
                 break;
             case 3:
@@ -58,7 +62,7 @@ public class MainApp {
 
 
 
-
+    //decision structure based on color
     public static Color getColor (String tempCol){
         switch (tempCol) {
             case "red":
