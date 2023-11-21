@@ -23,7 +23,7 @@ public class Circle extends Shape{
         turtle.cornerGoTo(location.x,location.y);
         turtle.turnLeft(90);
         turtle.penDown();
-
+        turtle.setDelay(.00001);
         for(int i=0; i<360; i++){
             turtle.turnLeft(1);
             turtle.forward(2 * Math.PI * radius / 360);
