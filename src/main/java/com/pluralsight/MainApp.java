@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MainApp {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        int width, height, choice, thickness, x, y,sideLength;
+        int width, height, choice, thickness, x, y,sideLength,hypotnuse;
         double radius;
         String tempColor;
         System.out.println("Welcome to Turtle Paint!");
@@ -54,7 +54,10 @@ public class MainApp {
                 circle.paint();
                 break;
             case 3:
-                Triangle triangle = new Triangle(turtle,location,getColor(tempColor),thickness);
+                System.out.print("What is the hypotnuse?");
+                hypotnuse = keyboard.nextInt();
+                keyboard.nextLine();
+                Triangle triangle = new Triangle(turtle,location,getColor(tempColor),thickness,hypotnuse);
                 triangle.paint();
         }
 
